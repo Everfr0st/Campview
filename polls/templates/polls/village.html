@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Villages</title>
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'polls/css/village.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    {% block content %}
+    <!-- *** NAVBAR *** -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-success">
+        <div class="container-fluid ">
+        <a class="navbar-brand" style="color: white; font-weight: bold; text-decoration: underline;" href="{% url 'index' %}">Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">	  
+        </div>
+        </div> 
+    </nav>
+
+    <div class="general">
+        <div class="con1">
+            <div class="row">
+                {% for elemento in villages %}
+                    
+
+                    <div class="col-sm" style="margin-top: 5%; margin-right: 2.5%;">
+                        <div class="card" style="width: 16rem">
+
+                            <a href="{% url 'cabain' elemento.id %}">
+                                <img src="{{ elemento.image }}" alt="{{ elemento.village_name }}" class="card-img-top">
+                            </a>
+                            
+                            <div class="card-body">
+                                <h5 class="card-title">{{ elemento.village_name }}</h5>
+                                <p class="card-text">minimal age: {{ elemento.minimal_age}} - maximum age: {{elemento.maximum_age}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="con2">
+            <div class="container-fluid h-100"> 
+                <div class="row w-100 align-items-center">
+                    <div class="col text-center">
+                        <!-- Buttons and text -->
+                        <br><br><br><br><br><br><br><br><br>
+                        {% comment %} <img src="{% static 'polls/img/cw-logo.png'%}" alt="" style="width: 130px;"> {% endcomment %}
+                            <h1>Villages</h1>
+                    </div>	
+                </div>
+            </div>
+        </div> 
+    </div>
+
+    <div class="contenedorBotones">
+        <a id="btnAdVi" href="http://127.0.0.1:8000/admin/polls/village/" target="_blank">Manage villages</a>
+        <a id="btnCrCa" href="http://127.0.0.1:8000/admin/polls/village/add/" target="_blank">Create</a>
+    </div>
+
+    <a href="{% url 'village' %}">
+        <img class="botonR" src="{% static 'polls/img/return-row.png' %}" alt="retorno" width="2.5%" height="2.5%">
+    </a>
+
+
+    {% comment %} FOOTER {% endcomment %}
+		<footer class="text-center text-white" style="background-color: #f1f1f1;">
+			<!-- Grid container -->
+		  
+			<!-- Copyright -->
+			<div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+			  <div class="container"></div>
+			  <div class="row justify-content-end">
+				
+				
+				<div class="col-4">
+				  <!--*** Logo CW *** -->
+					  <div class="pageIco">
+						  <a href="http://www.campwise.org"><img src="{% static 'polls/img/cw-logo.png'%}" alt="" style="width: 130px;"></a>
+					  </div>
+				</div> 
+				
+			  </div>
+		  
+			</div>
+			
+			<!-- Copyright -->
+		  </footer>
+
+      {% endblock %}
+</body>
+</html>

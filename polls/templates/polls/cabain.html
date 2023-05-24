@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Selection</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{% static 'polls/css/cabain.css' %}">
+</head>
+
+<body>
+    {% block content %}
+        <!-- *** NAVBAR *** -->
+        <nav class="navbar navbar-expand-sm navbar-light bg-success">
+            <div class="container-fluid ">
+            <a class="navbar-brand" style="color: white; font-weight: bold; text-decoration: underline;" href="{% url 'index' %}">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">	  
+            </div>
+            </div> 
+        </nav>
+
+        {% comment %} CONTENT {% endcomment %}
+        <div class="general">
+            <div class="con1">
+                <div class="row">
+                    {% for elemento in cabanas %}
+                        <div class="col-sm" style="margin-top: 5%; margin-right: 2.5%;">
+                            <div class="card" style="width: 16rem">
+    
+                                <a href="{% url 'camper' idvilla elemento.id %}">
+                                    <img src="{{ elemento.cabain_image }}" alt="{{ elemento.cabain_name }}" class="card-img-top">
+                                </a>
+                                
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ elemento.cabain_name }}</h5>
+                                </div>
+                            </div>
+                        </div>
+                        
+    
+                    {% endfor %}
+                </div>
+            </div>
+    
+            <div class="con2">
+                <h1>{{ invilla.village_name }}</h1>
+                <img class="villa" src="{{ invilla.image }}" alt="{{ invilla.village_name }}">
+                
+        
+                <p class="infovilla"><b>Location:</b>  East side of the lake </br>
+                <b>Staff in charge:</b> Julian, Laura </br>
+                <b>Number of cabain:</b> 5</p>
+    
+            </div>
+        </div>
+    
+        <div class="contenedorBotones">
+            <a id="btnAdVi" href="http://127.0.0.1:8000/admin/polls/village/" target="_blank">Manage village</a>
+            <a id="btnCrCa" href="http://127.0.0.1:8000/admin/polls/cabain/add/" target="_blank">Create cabain</a>
+        </div>
+    
+        <a href="{% url 'village' %}">
+            <img class="botonR" src="{% static 'polls/img/return-row.png' %}" alt="retorno" width="2.5%" height="2.5%">
+        </a>
+    
+     {% comment %} FOOTER {% endcomment %}
+		<footer class="text-center text-white" style="background-color: #f1f1f1;">
+			<!-- Grid container -->
+		  
+			<!-- Copyright -->
+			<div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+			  <div class="container"></div>
+			  <div class="row justify-content-end">
+				
+				
+				<div class="col-4">
+				  <!--*** Logo CW *** -->
+					  <div class="pageIco">
+						  <a href="http://www.campwise.org"><img src="{% static 'polls/img/cw-logo.png'%}" alt="" style="width: 130px;"></a>
+					  </div>
+				</div> 
+				
+			  </div>
+		  
+			</div>
+			
+			<!-- Copyright -->
+		  </footer>
+    {% endblock %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.min.js"></script>
+</body>
+</html>

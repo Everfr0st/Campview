@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Camp View</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{% static 'polls/css/index.css' %}">
+</head>
+<body>
+	{% block content %}
+    <h1>Villages</h1>
+    <ul>
+        {% for villa in villages_list %}
+            <p><button type="button" class="btn btn-secondary">{{ villa.village_name }}</button></p>
+        {% endfor %}
+    </ul>
+    {% endblock %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.min.js"></script>
+</body>
+</html>

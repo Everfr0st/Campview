@@ -1,0 +1,25 @@
+nav {
+    background-image: url(https://besthqwallpapers.com/Uploads/24-7-2020/138369/thumb2-brown-wooden-planks-4k-horizontal-wooden-boards-brown-wooden-texture-wood-planks.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+html {
+    margin: 0;
+    height: 100vh;
+    }
+    
+    body {
+    margin: 0;
+    /* border: 10px red solid; */
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        background-color: gray;
+        width: 100%;
+    }

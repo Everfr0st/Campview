@@ -1,0 +1,105 @@
+body{
+    background-color:#FFFDC1;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+nav {
+    background-image: url(https://besthqwallpapers.com/Uploads/24-7-2020/138369/thumb2-brown-wooden-planks-4k-horizontal-wooden-boards-brown-wooden-texture-wood-planks.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.contenedorHeader{
+    display: flex;
+}
+
+h1{
+    margin-left: 20px;
+    margin-top: 12px;
+    font-size:40px;
+    font-weight: 550;
+    color: #6D4D26;
+}
+
+.botonH{
+    margin-top: 20px;
+    margin-left: 25px;
+    width:40px;
+    height:40px;
+}
+.villa{
+    margin-top:10%;
+    margin-left: 10%;
+    border:5px solid;
+    border-radius: 50%;
+    width: 80%;
+    height: auto;
+}
+
+.infovilla{
+    margin-top: 3%;
+    margin-left: 8.5%;
+    
+}
+.botonR{
+    margin-left: 25px;
+    margin-top: 5px;
+    width: 3%;
+    height: auto;
+
+}
+
+#btnAdVi{ 
+    display:block;
+    width: 180px;
+    font-weight: 600;
+    background-color:#6D4D26;
+    border-radius: 10px;
+    padding: 10px 10px;
+    margin-top:4.5%;
+    margin-left: 20%;
+    color:#fff;
+    text-decoration: none;
+}
+
+#btnCrCa{ 
+    display:block;
+    width: 140px;
+    font-weight: 600;
+    background-color:#6D4D26;
+    border-radius: 10px;
+    padding: 10px 10px;
+    margin-top:4.5%;
+    margin-left: 40%;
+    color:#fff;
+    text-decoration: none;
+}
+
+.contenedorBotones{
+    display:flex;
+    width: 80%;
+    height: 90px;
+}
+
+.con1{
+    width: 70%;
+    min-height: 500px;
+    float: right;
+
+
+}
+
+.con2{
+    
+    width: 30%;
+    height: auto;
+    
+
+}
+.general{
+    
+    width: auto;
+    height: auto;
+    
+}
